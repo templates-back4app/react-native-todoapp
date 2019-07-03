@@ -39,14 +39,17 @@ export default class LogInScreen extends React.Component{
 
   componentWillMount(){
     Parse.User.currentAsync().then(user => {
-      if (user !== undefined) this.navigateToPage('LogInStack');
-      let sessionToken = user.getSessionToken();
-      console.log(sessionToken)
-      Parse.User.become(sessionToken).then(object => {
-        this.navigateToPage('HomeStack');
-      }).catch(error => {
-        this.navigateToPage('LogInStack');
-      });
+      if (user !== undefined || user !== null) { 
+        this.navigateToPage('LogInStack'); 
+      } else {
+        let sessionToken = user.getSessionToken();
+        console.log(sessionToken)
+        Parse.User.become(sessionToken).then(object => {
+          this.navigateToPage('HomeStack');
+        }).catch(error => {
+          this.navigateToPage('LogInStack');
+        });
+      }
     })
   }
 
