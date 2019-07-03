@@ -6,9 +6,14 @@ import {
   View,
 } from 'react-native';
 
-export default function HomeScreen() {
-  return (
-    <View style={styles.container}>
+export default class HomeScreen extends React.Component{
+  constructor(props){
+    super(props);
+  }
+
+  render(){
+    return (
+      <View style={styles.container}>
         <ScrollView
             style={styles.container}
             contentContainerStyle={styles.contentContainer}>
@@ -16,8 +21,9 @@ export default function HomeScreen() {
                 <Text>ABC</Text>
             </View>
         </ScrollView>    
-    </View>
-  );
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({

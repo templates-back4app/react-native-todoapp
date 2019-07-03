@@ -1,5 +1,5 @@
 module.exports = {
-    applicationId: 'ABC',
-    javascriptKey: 'CBA',
-    serverURL: 'ABCCBA'
+    applicationId: '',
+    javascriptKey: '',
+    serverURL: ''
 }

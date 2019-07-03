@@ -6,18 +6,24 @@ import {
   View,
 } from 'react-native';
 
-export default function SignUpScreen() {
-  return (
-    <View style={styles.container}>
-        <ScrollView
-            style={styles.container}
-            contentContainerStyle={styles.contentContainer}>
-            <View style={styles.welcomeContainer}>
-                <Text>ABC</Text>
-            </View>
-        </ScrollView>    
-    </View>
-  );
+export default class SignUpScreen extends React.Component{
+  constructor(props){
+    super(props);
+  }
+  
+  render(){
+    return (
+      <View style={styles.container}>
+          <ScrollView
+              style={styles.container}
+              contentContainerStyle={styles.contentContainer}>
+              <View style={styles.welcomeContainer}>
+                  <Text>ABC</Text>
+              </View>
+          </ScrollView>    
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
