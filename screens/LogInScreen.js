@@ -43,7 +43,6 @@ export default class LogInScreen extends React.Component{
         this.navigateToPage('LogInStack'); 
       } else {
         let sessionToken = user.getSessionToken();
-        console.log(sessionToken)
         Parse.User.become(sessionToken).then(object => {
           this.navigateToPage('HomeStack');
         }).catch(error => {
@@ -53,21 +52,6 @@ export default class LogInScreen extends React.Component{
     })
   }
 
-  goToSignUpPage = () =>{
-    this.props.navigation.navigate('SignUpStack');
-  }
-
-  restorePassword = () =>{
-    this.props.navigation.navigate('RestorePasswordStack');
-  }
-
-  submitAndClear = () => {
-    this.setState({
-      username: '',
-      password: '',
-      nameError: null
-    })
-  }
 
   onLogin = async() =>{
     let    
@@ -79,8 +63,8 @@ export default class LogInScreen extends React.Component{
     } else {
       try {
         await Parse.User.logIn(username.toString(), password.toString());
-        this.props.navigation.navigate('HomeStack');
-        this.submitAndClear();
+        // this.submitAndClear();
+        this.props.navigation.navigate('HomeStack');        
       } catch (error) {                
         this.setState(() => ({ nameError: error.message }));
         return (error)
