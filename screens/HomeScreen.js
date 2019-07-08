@@ -17,8 +17,38 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Parse from "parse/react-native";
 
 export default class HomeScreen extends React.Component {
-  static navigationOptions = {
-    header: null
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerTitle: 'List',
+      headerRight: (
+        <View 
+          style={{marginRight: 15}}>
+         <Icon name="sign-out" size={30} color="#00b5ec" 
+          onPress=
+            {() => {
+              Alert.alert(
+                'Sign out',
+                'Are you sure do you want to exit?',
+                [                  
+                  {
+                    text: 'Cancel',
+                    onPress: () => console.log('Cancel Pressed'),
+                    style: 'cancel',
+                  },
+                  {
+                    text: 'Yes', onPress: () => {
+                      navigation.getParam('clearAll')
+                      Parse.User.logOut();
+                      navigation.navigate('LogInStack')
+                  }},
+                ],
+                {cancelable: false},
+              );
+              }
+            } />
+        </View>
+      )
+    };
   };
 
   constructor(props){
