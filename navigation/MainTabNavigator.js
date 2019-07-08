@@ -50,8 +50,8 @@ RestorePasswordStack.navigationOptions = {
 };
 
 export default createBottomTabNavigator({
+  LogInStack,
   HomeStack,
   SignUpStack,
-  LogInStack,
   RestorePasswordStack
 });
