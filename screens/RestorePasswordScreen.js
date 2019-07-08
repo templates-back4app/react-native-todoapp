@@ -82,16 +82,16 @@ export default class RestorePassword extends React.Component {
       </View>
       )}
 
-      <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={this.resetPassword}>
+      <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.resetPassword}>
         <Text style={styles.loginText}>Send email</Text>
       </TouchableHighlight>
 
       <View style={styles.containerLinksRow}>
-        <TouchableHighlight style={styles.txtLink} onPress={this.navigateToPage('LoginStack')}>
+        <TouchableHighlight style={styles.txtLink} onPress={() => this.navigateToPage('LogInStack')}>
             <Text style={{fontWeight:'bold'}}>Login</Text>
         </TouchableHighlight>
 
-        <TouchableHighlight style={styles.txtLink} onPress={this.navigateToPage('SignUpStack')}>
+        <TouchableHighlight style={styles.txtLink} onPress={() => this.navigateToPage('SignUpStack')}>
             <Text style={{fontWeight:'bold'}}>Register</Text>
         </TouchableHighlight>
       </View>            
