@@ -4,7 +4,7 @@ import { AppLoading } from 'expo';
 import AppNavigator from './navigation/AppNavigator';
 import keys from './constants/Keys';
 
-import Parse from "parse/react-native";
+import Parse from "parse/react-native.js";
 
 Parse.setAsyncStorage(AsyncStorage);
 
